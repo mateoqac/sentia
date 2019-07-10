@@ -1,0 +1,20 @@
+<table id="table" class="table table-striped">
+    <thead>
+      <tr>
+        <th id="name"> Name </th>
+        <th id="date"> Date </th>
+        <th id="number"> Number </th>
+        <th> Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each  do |user|%>
+      <tr data-item-id=<%= "#{user.id}"%>>
+        <td><%=user.name%></td>
+        <td><%=user.date%></td>
+        <td><%=user.number%></td>
+        <td><%=user.description%></td>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
