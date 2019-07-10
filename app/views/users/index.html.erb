@@ -1,19 +1,11 @@
-<%= flash[:notice]%>
-
 <div class="container">
   <div class="col">
     <h3> Select file to import data</h3>
     <%= form_tag import_users_path, multipart: true do %>
-      <%= file_field_tag :file%>
-      <%= submit_tag "Import", class: "btn btn-warning"%>
+      <%= file_field_tag :file, required: true%>
+      <%= submit_tag "Import", class: "btn btn-warning",id: 'csv-import-submit'%>
     <% end%>
   </div>
 
   <%= render partial: 'table', colecction: @users %>
 </div>
-
-
-
-
-
-

@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   require 'csv'
-  validates :name, :number, :date, :description, presence: true
   
+  validates :name, :number, :date, :description, presence: true
+  validates_uniqueness_of :name, scope: :number
+
   def self.import(file)
     transaction do
       CSV.foreach(file.path, headers: true) do |row|

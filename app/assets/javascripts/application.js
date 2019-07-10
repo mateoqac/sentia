@@ -29,4 +29,8 @@ $(document).ready(function(){
       { "searchable": false , "orderable": false}
     ]}
   );
+
+  setTimeout(function() {
+    $('#flash').slideUp();
+  }, 3000);
 })
