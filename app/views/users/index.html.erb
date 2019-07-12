@@ -6,6 +6,21 @@
       <%= submit_tag "Import", class: "btn btn-warning",id: 'csv-import-submit'%>
     <% end%>
   </div>
-
-  <%= render partial: 'table', colecction: @users %>
+  <div id="container">
+    <table id = "table" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th data-sort="name" class="sortable"> Name </th>
+          <th data-sort="date" class="sortable"> Date </th>
+          <th data-sort="number" class="sortable"> Number </th>
+          <th name="description"> Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each  do |user|%>
+          <%= render partial: 'table_row', locals: {user: user} %>
+        <%end%>  
+      </tbody>
+    </table>
+  </div>
 </div>

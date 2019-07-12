@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery3
-//= require dataTables/jquery.dataTables
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require rails-ujs
@@ -20,15 +19,16 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('#table').DataTable(
-    {paging: false,
-    "columns": [
-      null,
-      { "searchable": false },
-      { "searchable": false },
-      { "searchable": false , "orderable": false}
-    ]}
-  );
+  $("#table").on('click', 'thead tr th.sortable', function(){
+    var field = $(this).data('sort')
+    return $.ajax({
+      url: '/users/sort',
+      type: 'post',
+      dataType: 'script',
+      data:{sort:field},
+      success: function () { }
+    });
+  })
 
   setTimeout(function() {
     $('#flash').slideUp();

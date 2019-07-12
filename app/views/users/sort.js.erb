@@ -1,0 +1,4 @@
+$('#table tbody').empty()
+<% @users.each  do |user|%>
+  $('#table tbody').append("<%= j render partial: 'table_row', locals: {user: user} %>")
+<%end%>

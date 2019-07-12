@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass'
 gem 'jquery-rails'
-gem 'jquery-datatables-rails', '~> 3.4.0'
 
 
 # Reduces boot times through caching; required in config/boot.rb
